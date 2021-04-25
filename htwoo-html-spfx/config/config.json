@@ -1,0 +1,18 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/config.2.0.schema.json",
+  "version": "2.0",
+  "bundles": {
+    "h-tw-oo-sample-web-part": {
+      "components": [
+        {
+          "entrypoint": "./lib/webparts/hTwOoSample/HTwOoSampleWebPart.js",
+          "manifest": "./src/webparts/hTwOoSample/HTwOoSampleWebPart.manifest.json"
+        }
+      ]
+    }
+  },
+  "externals": {},
+  "localizedResources": {
+    "HTwOoSampleWebPartStrings": "lib/webparts/hTwOoSample/loc/{locale}.js"
+  }
+}
