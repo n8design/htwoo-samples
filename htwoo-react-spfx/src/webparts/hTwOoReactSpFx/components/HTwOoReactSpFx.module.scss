@@ -1,0 +1,38 @@
+@import 'node_modules/@n8d/htwoo-core/lib/components/base';
+
+.hTWOoReactSpFx {
+
+  :global {
+      
+    // For Avatar and Person selector components
+    @import 'node_modules/@n8d/htwoo-core/lib/components/avatar';
+
+    // Various types of buttons
+    @import 'node_modules/@n8d/htwoo-core/lib/components/button';
+
+    // Various types of buttons
+    @import 'node_modules/@n8d/htwoo-core/lib/components/cards';
+
+    // Various types of buttons
+    @import 'node_modules/@n8d/htwoo-core/lib/components/dialogs';
+
+    // Various types of buttons
+    @import 'node_modules/@n8d/htwoo-core/lib/components/forms';
+
+    // Various types of icons controls
+    @import 'node_modules/@n8d/htwoo-core/lib/components/icon';
+
+    // Various types of menus controls
+    @import 'node_modules/@n8d/htwoo-core/lib/components/menus';
+
+    // Various types of tables
+    @import 'node_modules/@n8d/htwoo-core/lib/components/table';
+
+    // Various types of typography
+    @import 'node_modules/@n8d/htwoo-core/lib/components/typography';
+
+    // Various types of web part utilities
+    @import 'node_modules/@n8d/htwoo-core/lib/components/webparts';
+
+  }
+}

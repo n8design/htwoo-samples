@@ -1,0 +1,18 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/config.2.0.schema.json",
+  "version": "2.0",
+  "bundles": {
+    "h-tw-oo-react-sp-fx-web-part": {
+      "components": [
+        {
+          "entrypoint": "./lib/webparts/hTwOoReactSpFx/HTwOoReactSpFxWebPart.js",
+          "manifest": "./src/webparts/hTwOoReactSpFx/HTwOoReactSpFxWebPart.manifest.json"
+        }
+      ]
+    }
+  },
+  "externals": {},
+  "localizedResources": {
+    "HTwOoReactSpFxWebPartStrings": "lib/webparts/hTwOoReactSpFx/loc/{locale}.js"
+  }
+}
