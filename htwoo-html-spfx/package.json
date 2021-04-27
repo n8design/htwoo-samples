@@ -17,7 +17,7 @@
     "@microsoft/sp-office-ui-fabric-core": "1.11.0",
     "@microsoft/sp-property-pane": "1.11.0",
     "@microsoft/sp-webpart-base": "1.11.0",
-    "@n8d/htwoo-core": "file:../../htwoo/packages/htwoo-core"
+    "@n8d/htwoo-core": "0.0.0-alpha.2"
   },
   "devDependencies": {
     "@microsoft/sp-build-web": "1.11.0",

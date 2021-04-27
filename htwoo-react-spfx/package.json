@@ -24,7 +24,7 @@
     "react-dom": "16.8.5"
   },
   "devDependencies": {
-    "@n8d/htwoo-core": "file:../../htwoo/packages/htwoo-core",
+    "@n8d/htwoo-core": "0.0.0-alpha.2",
     "@microsoft/rush-stack-compiler-3.9": "^0.4.x",
     "@microsoft/sp-build-web": "1.11.0",
     "@microsoft/sp-module-interfaces": "1.11.0",
