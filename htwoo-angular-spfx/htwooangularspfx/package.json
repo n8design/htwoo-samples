@@ -1,6 +1,11 @@
 {
   "name": "htwooangularspfx",
   "version": "0.0.0",
+  "author": {
+    "name": "Chandani Prajapati",
+    "email": "chandaniprajapati96@gmail.com",
+    "url": "https://github.com/chandaniprajapati"
+  },
   "scripts": {
     "ng": "ng",
     "start": "ng serve",

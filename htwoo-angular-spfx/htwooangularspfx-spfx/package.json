@@ -1,6 +1,11 @@
 {
   "name": "htwooangularspfx-spfx",
   "version": "0.0.1",
+  "author": {
+    "name": "Chandani Prajapati",
+    "email": "chandaniprajapati96@gmail.com",
+    "url": "https://github.com/chandaniprajapati"
+  },
   "private": true,
   "main": "lib/index.js",
   "engines": {
