@@ -39,7 +39,7 @@ export default class HTwOoReactSpFxWebPart extends BaseClientSideWebPart<IHTwOoR
 
       // output all theme theme variants
       console.log("LOG Theme variant:::", this._themeVariant);
-      
+
       // transfer semanticColors into CSS variables
       this.setCSSVariables(this._themeVariant.semanticColors);
 
@@ -48,7 +48,7 @@ export default class HTwOoReactSpFxWebPart extends BaseClientSideWebPart<IHTwOoR
 
       // transfer color palette into CSS variables
       this.setCSSVariables(this._themeVariant.palette);
-      
+
       // transfer color palette into CSS variables
       this.setCSSVariables(this._themeVariant["effects"]);
 
@@ -68,6 +68,19 @@ export default class HTwOoReactSpFxWebPart extends BaseClientSideWebPart<IHTwOoR
   // Handle all theme changes
   private _handleThemeChangedEvent(args: ThemeChangedEventArgs): void {
     this._themeVariant = args.theme;
+
+    // transfer semanticColors into CSS variables
+    this.setCSSVariables(this._themeVariant.semanticColors);
+
+    // transfer fonts into CSS variables
+    this.setCSSVariables(this._themeVariant.fonts);
+
+    // transfer color palette into CSS variables
+    this.setCSSVariables(this._themeVariant.palette);
+
+    // transfer color palette into CSS variables
+    this.setCSSVariables(this._themeVariant["effects"]);
+    
   }
 
   /// Converts JSON Theme Slots it CSS variables

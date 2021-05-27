@@ -66,6 +66,20 @@ export default class HTwOoSampleWebPart extends BaseClientSideWebPart<IHTwOoSamp
   // Handle all theme changes
   private _handleThemeChangedEvent(args: ThemeChangedEventArgs): void {
     this._themeVariant = args.theme;
+
+    // transfer semanticColors into CSS variables
+    this.setCSSVariables(this._themeVariant.semanticColors);
+
+    // transfer fonts into CSS variables
+    this.setCSSVariables(this._themeVariant.fonts);
+
+    // transfer color palette into CSS variables
+    this.setCSSVariables(this._themeVariant.palette);
+
+    // transfer color palette into CSS variables
+    this.setCSSVariables(this._themeVariant["effects"]);
+
+    
   }
 
   /// Converts JSON Theme Slots it CSS variables
@@ -95,7 +109,7 @@ export default class HTwOoSampleWebPart extends BaseClientSideWebPart<IHTwOoSamp
       <button class="hoo-button-primary">
         <div class="hoo-button-label">My First H2O Primary button</div>
       </button><br>
-      ${ this.getFacePiles() }
+      ${this.getFacePiles()}
   </div>`;
   }
 

@@ -1,9 +1,9 @@
 import { Version } from '@microsoft/sp-core-library';
 import {
-    BaseClientSideWebPart,
-    IPropertyPaneConfiguration,
-    PropertyPaneTextField
-  } from '@microsoft/sp-webpart-base';
+  BaseClientSideWebPart,
+  IPropertyPaneConfiguration,
+  PropertyPaneTextField
+} from '@microsoft/sp-webpart-base';
 
 import { escape } from '@microsoft/sp-lodash-subset';
 
@@ -71,6 +71,18 @@ export default class HtwooangularspfxWebPart extends BaseClientSideWebPart<IHtwo
   // Handle all theme changes
   private _handleThemeChangedEvent(args: ThemeChangedEventArgs): void {
     this._themeVariant = args.theme;
+
+    // transfer semanticColors into CSS variables
+    this.setCSSVariables(this._themeVariant.semanticColors);
+
+    // transfer fonts into CSS variables
+    this.setCSSVariables(this._themeVariant.fonts);
+
+    // transfer color palette into CSS variables
+    this.setCSSVariables(this._themeVariant.palette);
+
+    // transfer color palette into CSS variables
+    this.setCSSVariables(this._themeVariant["effects"]);
   }
 
   /// Converts JSON Theme Slots it CSS variables
@@ -89,7 +101,7 @@ export default class HtwooangularspfxWebPart extends BaseClientSideWebPart<IHtwo
   }
 
   public render(): void {
-    this.domElement.innerHTML = `<app-htwooangularspfx-web-part description="${ this.properties.description }"></app-htwooangularspfx-web-part>`;
+    this.domElement.innerHTML = `<app-htwooangularspfx-web-part description="${this.properties.description}"></app-htwooangularspfx-web-part>`;
   }
 
   protected get dataVersion(): Version {
