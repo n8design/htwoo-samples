@@ -79,7 +79,7 @@ export default class HTwOoSampleWebPart extends BaseClientSideWebPart<IHTwOoSamp
     // transfer color palette into CSS variables
     this.setCSSVariables(this._themeVariant["effects"]);
 
-    
+
   }
 
   /// Converts JSON Theme Slots it CSS variables
@@ -110,92 +110,95 @@ export default class HTwOoSampleWebPart extends BaseClientSideWebPart<IHTwOoSamp
         <div class="hoo-button-label">My First H2O Primary button</div>
       </button><br>
       ${this.getFacePiles()}
-  </div>`;
+  </div>`
+
+  // 
+
   }
 
   private getFacePiles(): string {
-    return `      <div class="hoo-facepile">
+    return `<div class="hoo-facepile">
     <div class="hoo-avatar-pres-48">
       <div class="hoo-avatar-48">
-        <img src="https://lab.n8d.studio/htwoo/htwoo-core/images//mug-shots/astronaut-mugshot-001.jpg" alt="" class="hoo-avatar" height="48" width="48" loading="lazy">
+        <img src="https://lab.n8d.studio/htwoo/htwoo-core/images//mug-shots/astronaut-mugshot-001.jpg" alt="" class="hoo-avatar-img" height="48" width="48" loading="lazy">
       </div>
       <div class="hoo-presence is-online" title=""></div>
     </div>
     <div class="hoo-avatar-pres-48">
       <div class="hoo-avatar-48">
-        <img src="https://lab.n8d.studio/htwoo/htwoo-core/images//mug-shots/dog-mugshot-001.jpg" alt="" class="hoo-avatar" height="48" width="48" loading="lazy">
+        <img src="https://lab.n8d.studio/htwoo/htwoo-core/images//mug-shots/dog-mugshot-001.jpg" alt="" class="hoo-avatar-img" height="48" width="48" loading="lazy">
       </div>
       <div class="hoo-presence is-online" title=""></div>
     </div>
     <div class="hoo-avatar-pres-48">
       <div class="hoo-avatar-48">
-        <img src="https://lab.n8d.studio/htwoo/htwoo-core/images//mug-shots/female-mugshot-001.jpg" alt="" class="hoo-avatar" height="48" width="48" loading="lazy">
+        <img src="https://lab.n8d.studio/htwoo/htwoo-core/images//mug-shots/female-mugshot-001.jpg" alt="" class="hoo-avatar-img" height="48" width="48" loading="lazy">
       </div>
       <div class="hoo-presence is-away" title=""></div>
     </div>
     <div class="hoo-avatar-pres-48">
       <div class="hoo-avatar-48">
-        <img src="https://lab.n8d.studio/htwoo/htwoo-core/images//mug-shots/male-mugshot-001.jpg" alt="" class="hoo-avatar" height="48" width="48" loading="lazy">
+        <img src="https://lab.n8d.studio/htwoo/htwoo-core/images//mug-shots/male-mugshot-001.jpg" alt="" class="hoo-avatar-img" height="48" width="48" loading="lazy">
       </div>
       <div class="hoo-presence is-dnd" title=""></div>
     </div>
     <div class="hoo-avatar-pres-48">
       <div class="hoo-avatar-48">
-        <img src="https://lab.n8d.studio/htwoo/htwoo-core/images//mug-shots/female-mugshot-002.jpg" alt="" class="hoo-avatar" height="48" width="48" loading="lazy">
+        <img src="https://lab.n8d.studio/htwoo/htwoo-core/images//mug-shots/female-mugshot-002.jpg" alt="" class="hoo-avatar-img" height="48" width="48" loading="lazy">
       </div>
       <div class="hoo-presence is-dnd" title=""></div>
     </div>
     <div class="hoo-avatar-pres-48">
       <div class="hoo-avatar-48">
-        <img src="https://lab.n8d.studio/htwoo/htwoo-core/images//mug-shots/male-mugshot-002.jpg" alt="" class="hoo-avatar" height="48" width="48" loading="lazy">
+        <img src="https://lab.n8d.studio/htwoo/htwoo-core/images//mug-shots/male-mugshot-002.jpg" alt="" class="hoo-avatar-img" height="48" width="48" loading="lazy">
       </div>
       <div class="hoo-presence is-oof" title=""></div>
     </div>
     <div class="hoo-avatar-pres-48">
       <div class="hoo-avatar-48">
-        <img src="https://lab.n8d.studio/htwoo/htwoo-core/images//mug-shots/female-mugshot-003.jpg" alt="" class="hoo-avatar" height="48" width="48" loading="lazy">
+        <img src="https://lab.n8d.studio/htwoo/htwoo-core/images//mug-shots/female-mugshot-003.jpg" alt="" class="hoo-avatar-img" height="48" width="48" loading="lazy">
       </div>
       <div class="hoo-presence is-oof" title=""></div>
     </div>
     <div class="hoo-avatar-pres-48">
       <div class="hoo-avatar-48">
-        <img src="https://lab.n8d.studio/htwoo/htwoo-core/images//mug-shots/male-mugshot-003.jpg" alt="" class="hoo-avatar" height="48" width="48" loading="lazy">
+        <img src="https://lab.n8d.studio/htwoo/htwoo-core/images//mug-shots/male-mugshot-003.jpg" alt="" class="hoo-avatar-img" height="48" width="48" loading="lazy">
       </div>
       <div class="hoo-presence is-dnd" title=""></div>
     </div>
     <div class="hoo-avatar-pres-48">
       <div class="hoo-avatar-48">
-        <img src="https://lab.n8d.studio/htwoo/htwoo-core/images//mug-shots/female-mugshot-004.jpg" alt="" class="hoo-avatar" height="48" width="48" loading="lazy">
+        <img src="https://lab.n8d.studio/htwoo/htwoo-core/images//mug-shots/female-mugshot-004.jpg" alt="" class="hoo-avatar-img" height="48" width="48" loading="lazy">
       </div>
       <div class="hoo-presence is-dnd" title=""></div>
     </div>
     <div class="hoo-avatar-pres-48">
       <div class="hoo-avatar-48">
-        <img src="https://lab.n8d.studio/htwoo/htwoo-core/images//mug-shots/male-mugshot-004.jpg" alt="" class="hoo-avatar" height="48" width="48" loading="lazy">
+        <img src="https://lab.n8d.studio/htwoo/htwoo-core/images//mug-shots/male-mugshot-004.jpg" alt="" class="hoo-avatar-img" height="48" width="48" loading="lazy">
       </div>
       <div class="hoo-presence is-dnd" title=""></div>
     </div>
     <div class="hoo-avatar-pres-48">
       <div class="hoo-avatar-48">
-        <img src="https://lab.n8d.studio/htwoo/htwoo-core/images//mug-shots/female-mugshot-005.jpg" alt="" class="hoo-avatar" height="48" width="48" loading="lazy">
+        <img src="https://lab.n8d.studio/htwoo/htwoo-core/images//mug-shots/female-mugshot-005.jpg" alt="" class="hoo-avatar-img" height="48" width="48" loading="lazy">
       </div>
       <div class="hoo-presence is-dnd" title=""></div>
     </div>
     <div class="hoo-avatar-pres-48">
       <div class="hoo-avatar-48">
-        <img src="https://lab.n8d.studio/htwoo/htwoo-core/images//mug-shots/male-mugshot-005.jpg" alt="" class="hoo-avatar" height="48" width="48" loading="lazy">
+        <img src="https://lab.n8d.studio/htwoo/htwoo-core/images//mug-shots/male-mugshot-005.jpg" alt="" class="hoo-avatar-img" height="48" width="48" loading="lazy">
       </div>
       <div class="hoo-presence is-online" title=""></div>
     </div>
     <div class="hoo-avatar-pres-48">
       <div class="hoo-avatar-48">
-        <img src="https://lab.n8d.studio/htwoo/htwoo-core/images//mug-shots/female-mugshot-006.jpg" alt="" class="hoo-avatar" height="48" width="48" loading="lazy">
+        <img src="https://lab.n8d.studio/htwoo/htwoo-core/images//mug-shots/female-mugshot-006.jpg" alt="" class="hoo-avatar-img" height="48" width="48" loading="lazy">
       </div>
       <div class="hoo-presence is-online" title=""></div>
     </div>
     <div class="hoo-avatar-pres-48">
       <div class="hoo-avatar-48">
-        <img src="https://lab.n8d.studio/htwoo/htwoo-core/images//mug-shots/male-mugshot-006.jpg" alt="" class="hoo-avatar" height="48" width="48" loading="lazy">
+        <img src="https://lab.n8d.studio/htwoo/htwoo-core/images//mug-shots/male-mugshot-006.jpg" alt="" class="hoo-avatar-img" height="48" width="48" loading="lazy">
       </div>
       <div class="hoo-presence is-online" title=""></div>
     </div>
