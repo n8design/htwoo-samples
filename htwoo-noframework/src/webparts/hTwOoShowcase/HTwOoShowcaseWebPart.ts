@@ -5,10 +5,16 @@ import {
 } from '@microsoft/sp-property-pane';
 import { BaseClientSideWebPart } from '@microsoft/sp-webpart-base';
 import { IReadonlyTheme } from '@microsoft/sp-component-base';
-import { escape } from '@microsoft/sp-lodash-subset';
 
 import styles from './HTwOoShowcaseWebPart.module.scss';
 import * as strings from 'HTwOoShowcaseWebPartStrings';
+
+import HooButton from './components/button';
+import HooAccordion from './components/accordion';
+
+import {
+  ThemeProvider
+} from '@microsoft/sp-component-base';
 
 export interface IHTwOoShowcaseWebPartProps {
   description: string;
@@ -16,69 +22,60 @@ export interface IHTwOoShowcaseWebPartProps {
 
 export default class HTwOoShowcaseWebPart extends BaseClientSideWebPart<IHTwOoShowcaseWebPartProps> {
 
-  private _isDarkTheme: boolean = false;
-  private _environmentMessage: string = '';
+  private _themeProvider: ThemeProvider;
+  private _themeVariant: IReadonlyTheme | undefined;
 
   public render(): void {
+
     this.domElement.innerHTML = `
-    <section class="${styles.hTwOoShowcase} ${!!this.context.sdks.microsoftTeams ? styles.teams : ''}">
-      <div class="${styles.welcome}">
-        <img alt="" src="${this._isDarkTheme ? require('./assets/welcome-dark.png') : require('./assets/welcome-light.png')}" class="${styles.welcomeImage}" />
-        <h2>Well done, ${escape(this.context.pageContext.user.displayName)}!</h2>
-        <div>${this._environmentMessage}</div>
-        <div>Web part property value: <strong>${escape(this.properties.description)}</strong></div>
-      </div>
-      <div>
-        <h3>Welcome to SharePoint Framework!</h3>
-        <p>
-        The SharePoint Framework (SPFx) is a extensibility model for Microsoft Viva, Microsoft Teams and SharePoint. It's the easiest way to extend Microsoft 365 with automatic Single Sign On, automatic hosting and industry standard tooling.
-        </p>
-        <h4>Learn more about SPFx development:</h4>
-          <ul class="${styles.links}">
-            <li><a href="https://aka.ms/spfx" target="_blank">SharePoint Framework Overview</a></li>
-            <li><a href="https://aka.ms/spfx-yeoman-graph" target="_blank">Use Microsoft Graph in your solution</a></li>
-            <li><a href="https://aka.ms/spfx-yeoman-teams" target="_blank">Build for Microsoft Teams using SharePoint Framework</a></li>
-            <li><a href="https://aka.ms/spfx-yeoman-viva" target="_blank">Build for Microsoft Viva Connections using SharePoint Framework</a></li>
-            <li><a href="https://aka.ms/spfx-yeoman-store" target="_blank">Publish SharePoint Framework applications to the marketplace</a></li>
-            <li><a href="https://aka.ms/spfx-yeoman-api" target="_blank">SharePoint Framework API reference</a></li>
-            <li><a href="https://aka.ms/m365pnp" target="_blank">Microsoft 365 Developer Community</a></li>
-          </ul>
-      </div>
+    <section class="${styles.hTwOoShowcase}">
+        <button class="hoo-button-primary">
+          <span class="hoo-button-label">Button</span>
+        </button>
+        <br>
+        ${ HooButton.primary('This is a primary button')}<br>
+        ${ HooButton.standard()}
+
+        <br>
+        <section class="hoo-accordion-group" role="accordion">
+        ${ HooAccordion.item("HTWOO IS BUILT WITH HTML AND CSS FIRST", 
+            `<p>HTML and CSS are the foundational languages of web development, and ultimately, all user interfaces on the web are created using HTML and CSS. While frameworks like React, Angular, and Vue provide additional functionality and tools for developers, they ultimately rely on HTML and CSS to create the UI.</p>
+            <p>One advantage of using HTML/CSS for UI components is their flexibility and compatibility with different development frameworks. Because HTML/CSS is a universal language understood by all web browsers and devices, components created using HTML/CSS can be easily translated, included, and embedded in any other development framework. It makes it easier for developers to switch between frameworks without having to rewrite their UI components completely.</p>
+            `) }
+        ${ HooAccordion.item("DOCUMENTATION = IMPLEMENTATION", `<p>hTWOo core uses PatternLab.io, a tool that allows you to create a style guide based on the Atomic Design Methodology by Brad Frost. This methodology has been proven since 2012/13 that it’s an easy way to create and describe user interfaces, from the smallest design components to full-page experiences. It is not only limited to the web but is capable of describing and user interface.
+        See it in action: hTWOo Core documentation</p>`) }
+        ${ HooAccordion.item() }
+        ${ HooAccordion.item() }
+        </section>
     </section>`;
   }
 
-  protected onInit(): Promise<void> {
-    return this._getEnvironmentMessage().then(message => {
-      this._environmentMessage = message;
-    });
-  }
+  private setCSSVariables = (palette: any) => {
+    let keys = Object.keys(palette);
 
+    for (let key of keys) {
 
+      this.domElement.style.setProperty(`--${key}`, palette[key]);
 
-  private _getEnvironmentMessage(): Promise<string> {
-    if (!!this.context.sdks.microsoftTeams) { // running in Teams, office.com or Outlook
-      return this.context.sdks.microsoftTeams.teamsJs.app.getContext()
-        .then(context => {
-          let environmentMessage: string = '';
-          switch (context.app.host.name) {
-            case 'Office': // running in Office
-              environmentMessage = this.context.isServedFromLocalhost ? strings.AppLocalEnvironmentOffice : strings.AppOfficeEnvironment;
-              break;
-            case 'Outlook': // running in Outlook
-              environmentMessage = this.context.isServedFromLocalhost ? strings.AppLocalEnvironmentOutlook : strings.AppOutlookEnvironment;
-              break;
-            case 'Teams': // running in Teams
-              environmentMessage = this.context.isServedFromLocalhost ? strings.AppLocalEnvironmentTeams : strings.AppTeamsTabEnvironment;
-              break;
-            default:
-              throw new Error('Unknown host');
-          }
-
-          return environmentMessage;
-        });
     }
 
-    return Promise.resolve(this.context.isServedFromLocalhost ? strings.AppLocalEnvironmentSharePoint : strings.AppSharePointEnvironment);
+  }
+
+  protected onInit(): Promise<void> {
+
+    // Consume the new ThemeProvider service
+    this._themeProvider = this.context.serviceScope.consume(ThemeProvider.serviceKey);
+
+    // If it exists, get the theme variant
+    this._themeVariant = this._themeProvider.tryGetTheme();
+
+    if (this._themeVariant) {
+      // transfer color palette into CSS variables
+      this.setCSSVariables(this._themeVariant.palette);
+    }
+
+    return super.onInit();
+
   }
 
   protected onThemeChanged(currentTheme: IReadonlyTheme | undefined): void {
@@ -86,16 +83,9 @@ export default class HTwOoShowcaseWebPart extends BaseClientSideWebPart<IHTwOoSh
       return;
     }
 
-    this._isDarkTheme = !!currentTheme.isInverted;
-    const {
-      semanticColors
-    } = currentTheme;
+    const { palette } = currentTheme;
 
-    if (semanticColors) {
-      this.domElement.style.setProperty('--bodyText', semanticColors.bodyText || null);
-      this.domElement.style.setProperty('--link', semanticColors.link || null);
-      this.domElement.style.setProperty('--linkHovered', semanticColors.linkHovered || null);
-    }
+    this.setCSSVariables(palette);
 
   }
 
