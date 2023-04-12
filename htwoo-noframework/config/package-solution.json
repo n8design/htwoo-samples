@@ -1,0 +1,40 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
+  "solution": {
+    "name": "htwoo-sample-v-2-0-0-no-framewok-client-side-solution",
+    "id": "990c0fa8-97c2-480e-81df-01e71fc5cf78",
+    "version": "1.0.0.0",
+    "includeClientSideAssets": true,
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "developer": {
+      "name": "",
+      "websiteUrl": "",
+      "privacyUrl": "",
+      "termsOfUseUrl": "",
+      "mpnId": "Undefined-1.17.0"
+    },
+    "metadata": {
+      "shortDescription": {
+        "default": "HTWOO Sample v2.0.0 - No Framewok description"
+      },
+      "longDescription": {
+        "default": "HTWOO Sample v2.0.0 - No Framewok description"
+      },
+      "screenshotPaths": [],
+      "videoUrl": "",
+      "categories": []
+    },
+    "features": [
+      {
+        "title": "htwoo-sample-v-2-0-0-no-framewok Feature",
+        "description": "The feature that activates elements of the htwoo-sample-v-2-0-0-no-framewok solution.",
+        "id": "628ea91e-e457-46f4-a2b9-69e2a30a2368",
+        "version": "1.0.0.0"
+      }
+    ]
+  },
+  "paths": {
+    "zippedPackage": "solution/htwoo-sample-v-2-0-0-no-framewok.sppkg"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/config.2.0.schema.json",
+  "version": "2.0",
+  "bundles": {
+    "h-tw-oo-the-better-fluent-design-web-part": {
+      "components": [
+        {
+          "entrypoint": "./lib/webparts/hTwOoTheBetterFluentDesign/HTwOoTheBetterFluentDesignWebPart.js",
+          "manifest": "./src/webparts/hTwOoTheBetterFluentDesign/HTwOoTheBetterFluentDesignWebPart.manifest.json"
+        }
+      ]
+    }
+  },
+  "externals": {},
+  "localizedResources": {
+    "HTwOoTheBetterFluentDesignWebPartStrings": "lib/webparts/hTwOoTheBetterFluentDesign/loc/{locale}.js"
+  }
+}
