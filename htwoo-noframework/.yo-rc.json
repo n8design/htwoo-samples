@@ -8,12 +8,12 @@
       "@microsoft/teams-js": "2.9.1"
     },
     "version": "1.17.0",
-    "libraryName": "htwoo-sample-v-2-0-0-no-framewok",
-    "libraryId": "990c0fa8-97c2-480e-81df-01e71fc5cf78",
+    "libraryName": "h-tw-oo-no-framework-showcase",
+    "libraryId": "7dbb3732-4f67-44ec-9be8-105ed12aa7ab",
     "environment": "spo",
     "packageManager": "npm",
-    "solutionName": "HTWOO Sample v2.0.0 - No Framewok",
-    "solutionShortDescription": "HTWOO Sample v2.0.0 - No Framewok description",
+    "solutionName": "hTWOo - No Framework Showcase",
+    "solutionShortDescription": "hTWOo - No Framework Showcase description",
     "skipFeatureDeployment": true,
     "isDomainIsolated": false,
     "componentType": "webpart"

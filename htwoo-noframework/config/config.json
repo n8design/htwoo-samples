@@ -2,17 +2,17 @@
   "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/config.2.0.schema.json",
   "version": "2.0",
   "bundles": {
-    "h-tw-oo-the-better-fluent-design-web-part": {
+    "h-tw-oo-showcase-web-part": {
       "components": [
         {
-          "entrypoint": "./lib/webparts/hTwOoTheBetterFluentDesign/HTwOoTheBetterFluentDesignWebPart.js",
-          "manifest": "./src/webparts/hTwOoTheBetterFluentDesign/HTwOoTheBetterFluentDesignWebPart.manifest.json"
+          "entrypoint": "./lib/webparts/hTwOoShowcase/HTwOoShowcaseWebPart.js",
+          "manifest": "./src/webparts/hTwOoShowcase/HTwOoShowcaseWebPart.manifest.json"
         }
       ]
     }
   },
   "externals": {},
   "localizedResources": {
-    "HTwOoTheBetterFluentDesignWebPartStrings": "lib/webparts/hTwOoTheBetterFluentDesign/loc/{locale}.js"
+    "HTwOoShowcaseWebPartStrings": "lib/webparts/hTwOoShowcase/loc/{locale}.js"
   }
 }

@@ -2,6 +2,6 @@
   "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/deploy-azure-storage.schema.json",
   "workingDir": "./release/assets/",
   "account": "<!-- STORAGE ACCOUNT NAME -->",
-  "container": "htwoo-sample-v-2-0-0-no-framewok",
+  "container": "h-tw-oo-no-framework-showcase",
   "accessKey": "<!-- ACCESS KEY -->"
 }
