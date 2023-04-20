@@ -1,13 +1,15 @@
-/* esling-disable np-warkings */
 @use 'sass:meta';
-@import '~@microsoft/sp-office-ui-fabric-core/dist/sass/SPFabricCore.scss';
+// @use '~@n8d/htwoo-core/lib/sass/00-base/colors/colors' as colors;
+
+// @import IS NOT FUTURE PROOF AND GETS DEPRECATED
+// @import '~@microsoft/sp-office-ui-fabric-core/dist/sass/SPFabricCore.scss';
 
 .hTwOoShowcase {
+  content: '';
   :global {
     @include meta.load-css('~@n8d/htwoo-core/lib/components/buttons');
     @include meta.load-css('~@n8d/htwoo-core/lib/components/menus');
     @include meta.load-css('~@n8d/htwoo-core/lib/components/icon');
+    // background-color: colors.$themePrimary;
   }
 }
-
-/* esling-enable */

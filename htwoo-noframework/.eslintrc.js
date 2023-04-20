@@ -122,6 +122,7 @@ module.exports = {
         // RATIONALE:         When left in shipping code, unused variables often indicate a mistake.  Dead code
         //                    may impact performance.
         //
+        "no-unused-vars": "off",
         // STANDARDIZED BY:   @typescript-eslint\eslint-plugin\dist\configs\recommended.json
         '@typescript-eslint/no-unused-vars': [
           1,
@@ -279,9 +280,9 @@ module.exports = {
         // STANDARDIZED BY:   eslint\conf\eslint-recommended.js
         'no-unsafe-finally': 2,
         // RATIONALE:         Catches a common coding mistake.
-        'no-unused-expressions': 1,
+        'no-unused-expressions': 0,
         // STANDARDIZED BY:   eslint\conf\eslint-recommended.js
-        'no-unused-labels': 1,
+        'no-unused-labels': 0,
         // STANDARDIZED BY:   eslint\conf\eslint-recommended.js
         'no-useless-catch': 1,
         // RATIONALE:         Avoids a potential performance problem.

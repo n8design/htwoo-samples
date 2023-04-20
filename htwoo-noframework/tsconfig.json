@@ -14,7 +14,8 @@
     "inlineSources": false,
     "strictNullChecks": false,
     "noImplicitAny": true,
-
+    "noUnusedLocals": false,
+    "noUnusedParameters": false,
     "typeRoots": [
       "./node_modules/@types",
       "./node_modules/@microsoft"

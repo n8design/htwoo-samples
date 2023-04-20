@@ -1,8 +1,6 @@
-export default class HooAccordion {
+export default class HooAccordionItem {
 
-    public static item = (header?: any, content?: any) => {
-
-        console.debug(header, content)
+    public static item = (header?: string, content?: string): string => {
 
         return `
             <details class="hoo-accordion">
